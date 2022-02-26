@@ -1,0 +1,547 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navigation img {
+    height: 35px;
+}
+.navigation {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.navigation-list{
+    display:flex;
+    justify-content: space-between;
+}
+
+.navigation-isi{
+    padding: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.navigation-isi:hover .nav-link {
+    color: rgb(14, 54, 61);
+}
+
+
+.menu-icon span img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.menu-icon, #show-menu {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    .menu-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    #show-menu:checked + .menu-icon span img {
+        display: none;
+    }
+    #show-menu:checked ~ .menu-icon span::after {
+        content: "\2715";
+        color: white;
+        font-size: 2rem;
+    }
+    .navigation .navigation-list {
+        display: block;
+        position: fixed;
+        background-color: #000131;
+        height: 100%;
+        max-width: 22rem;
+        width: 100%;
+        margin-top: 70px;
+        left: -100%;
+        z-index: 999;
+        transition: 0.3s ease;
+    }
+    #show-menu:checked ~ .navigation-list {
+        left: 0%;
+    }
+    
+    .nav-link {
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+    }
+    .navigation-isi {
+        margin: 1rem;
+        
+    }
+}
+
+.header{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./bg3.gif);
+    background-size: cover;
+    background-position: center;
+}
+
+.main-interface {
+    padding-top: 70px;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.scrolled {
+    background-image: url(./bg3.gif);
+    background-size: cover;
+    background-position: center;
+}
+.main-interface h3{
+    opacity:0;
+    background: linear-gradient(to right, #f8b195, #f67280, #c06c84);
+    font-weight: 800;
+    font-size: 40px;  
+    width: fit-content;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    overflow: hidden;
+    animation: shring-animation 2.2s steps(40,end) 2s forwards, blink .5s step-end infinite alternate;
+  }
+  
+  @keyframes shring-animation {
+    0% {
+      background-position: 0 0;
+      opacity: 0;
+      width: 0;
+    }
+    1% {
+      background-position: 0 0;
+      opacity: 1;
+      border-right: 1px ;
+    }
+    50% {
+      background-position: 150px 0;
+      opacity: 1;
+      border-right: 1px ;
+    }
+    100% {
+      background-position: 400px 0;
+      opacity: 1;
+      border-right: 1px ;
+    }
+  }
+  
+  @keyframes type {
+    0% {
+      width: 0;
+    }
+    1%, 99%{
+      border-right: 1px ;
+    }
+    100%{
+      border-right: none;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .about-me {
+    padding: 1rem;
+    max-width: 1200px;
+}
+
+.self-img {
+    padding: 1rem;
+    display: inline-block;
+    position: relative;
+    width: 50%;
+}
+
+.self-img img {
+    display: block;
+    max-width: 100%;
+    max-height: 600px;
+    border-radius:25px;
+    margin-left: 15px;
+    box-shadow: 5px 5px 5px 5px rgb(255, 255, 255);
+}
+
+.deskripsi {
+    padding: 1rem;
+    display: inline-block;
+    width: 49%;
+    color: white;
+    background-image: url(./paper.png);
+    background-size: cover;
+    background-position: center;
+}
+.deskripsi h1 {
+    margin-top: 60px;;
+    margin-bottom: 1rem;
+  
+}
+
+  
+.deskripsi p {
+    font-size: 1.3rem;
+    text-align: justify;
+    font-family:'Indie Flower',cursive;
+}
+
+.self-img {
+    vertical-align: top;
+}
+
+@media (max-width: 800px) {
+    .deskripsi, .self-img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .software{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .item{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center; 
+    }
+    .web{
+        margin-top: 15px;
+    }
+
+    .contactcontainer, .contactphoto{
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        vertical-align: top;
+    }
+    
+}
+.about-me {
+    margin: auto;
+}
+
+.container {
+    width: 100%;
+    background-image: url(./bgabout.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.about-me .deskripsi {
+    color: black;
+}
+
+.Education h1{
+    margin-top: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.table_1 tbody th{
+    padding:0.5rem;
+    font-size:24px;
+    font-family:'Courier New', Courier, monospace
+}
+.table_1 thead tr{
+background-color:rgb(161, 18, 18);
+height:35px;
+color:white;
+}
+
+.imageoverlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width:400.64px;
+    height:600px;
+    max-width:100%;
+    max-height:100%;
+    background:rgba(0,0,0,0.6);
+    background-size: cover;
+    border-radius: 25px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+    margin-top:15px;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.imagetitle{
+    color:white;
+}
+.imgdesc{
+    color:white;
+}
+
+.self-img:hover .imageoverlay{
+    opacity: 1;
+}
+
+.skillscontainer h1{
+    color:white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Sigmar One';
+    font-size:35px
+    
+}
+.software{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.dev{
+    margin-top:50px;
+    left:0;
+    width: 150px;
+    height: 150px;
+    margin-left:15px;
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.vs{
+    margin-top:50px;
+    width: 150px;
+    height: 150px;  
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left:15px;
+}
+
+.ps{
+    margin-top:50px;
+    width: 150px;
+    height: 150px; 
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left:15px;
+}
+
+
+
+.c{
+    margin-top:50px;
+    width: 150px;
+    height: 150px; 
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left:15px;
+}
+.cpp{
+    margin-top:50px;
+    width: 150px;
+    height: 150px; 
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left:15px;
+}
+.html{
+    margin-top:50px;
+    width: 150px;
+    height: 150px; 
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left:15px;
+}
+.porto{
+    background-color: #000131;
+    color:white;
+    width: 100%;
+}
+
+
+.porto h1{
+    margin-top:5px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Pacifico', cursive;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+}
+.item{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+.bank{
+    
+    width: 700px;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    background-color: white;
+    border-radius: 25px;
+    border-width: thin;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.web{
+    width: auto;
+    height: 375px;
+    padding: 1rem;
+    display: flex;
+    background-color: white;
+    border-radius: 25px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.rectangle{
+    height: 70px;
+    width: 5px;
+    position: absolute;
+    border-radius: 50%;
+    animation: roll 3s ease infinite;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #4e5ff5 0%, #ffffff)
+}
+.circle{
+    height: 70px;
+    width: 5px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #f8b195;
+    animation: roll2 3s ease infinite;
+}
+@keyframes roll{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes roll2{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(180deg);
+    }
+}
+
+.contactcontainer{
+    background-color: #132144;
+}
+
+.contactcontainer h1{
+   padding: 1rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Lilita One';
+    font-size: 35px;
+}
+
+.contactphoto{
+    padding: 2 rem 1rem;
+    display: inline-block;
+    width: 50%;
+    padding: 1rem;
+    vertical-align: top;
+    margin: auto;
+    max-width: 50%;
+}
+
+.iconcontact{
+   
+    max-width: 100%;
+    max-height: 300px;
+    display: block;
+    margin: auto;
+    animation: pulseTWT 3s linear infinite;
+    border-radius: 100px;
+}
+
+.contactform{
+    display: inline-block;
+    width: 49%;
+    margin: auto;
+    padding:2rem 1rem;
+    background-color: transparent;
+    max-width: 400px;
+    vertical-align: top;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.input input{
+    width: 70%;
+    margin: auto;
+    display: block;
+    border: none;
+    border-bottom: solid white 2px;
+    background-color: transparent;
+    padding-bottom: 0.5rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+form button {
+    display: block;
+    margin: auto;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    border: none;
+    margin-top: 30px;
+}
+
+@keyframes pulseTWT{
+    0%{
+        box-shadow: none;
+    }
+    50%{
+        box-shadow: 0 0 0 0 rgba(21, 136, 207, 0.8);;
+    }
+    100%{
+        box-shadow: 0 0 0 20px rgba(19, 72, 105, 0);
+    }
+}
